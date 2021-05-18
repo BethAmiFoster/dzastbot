@@ -33,7 +33,7 @@ class MyClient(discord.Client):
             return
         if message.author.bot: return
         if message.content.startswith('//dzhelp') and message.channel.id !=660314906972651530:
-           embedhelp=discord.Embed(title="Džastbot v2.120 help menu", description="Welcome to džastbot help menu, here is a small command/feature list:")
+           embedhelp=discord.Embed(title="Džastbot v2.121 help menu", description="Welcome to džastbot help menu, here is a small command/feature list:")
            embedhelp.set_author(name="Džastbot", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png")
            embedhelp.add_field(name="//megadrop", value="//megadrop - posts link with every nfs build i (JA) could find up to 2020 xmas ", inline=False)
            embedhelp.add_field(name="//irr", value="//irr - Your post/This discussion meme", inline=False)
@@ -44,13 +44,14 @@ class MyClient(discord.Client):
            embedhelp.add_field(name="//dzhelp", value="//dzhelp - Shows this message", inline=False)
            embedhelp.add_field(name="//changelog", value="//changelog - changelog", inline=False)
            embedhelp.add_field(name="funny", value="funny - yes", inline=False)
-           embedhelp.add_field(name="Other features:", value="Responds with a picture/video to words `Ancar` `Creedoo` `Phantom` `Switch` `Jojo` `Vtuber` `Sus` `Among us` `Amogus` `Amongus` `Pimps at sea` `Catgirl` and `Depressing`", inline=False)
+           embedhelp.add_field(name="Other features:", value="Responds with a picture/video to words `Ancar` `Creedoo` `Phantom` `Switchuwu` `Jojo` `Vtuber` `Sus` `Among us` `Amogus` `Amongus` `Pimps at sea` `Catgirl` and `Depressing`", inline=False)
            embedhelp.add_field(name="Misc:", value="//update and //loopback - things exclusive for JA", inline=False)
            embedhelp.set_footer(text="fuck discord fr")
            await message.reply(embed=embedhelp, mention_author=True)
         if message.content.startswith('//changelog') and message.channel.id !=660314906972651530:
            embed=discord.Embed(title="Džastbot changelog")
            embed.set_author(name="Džastbot", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png")
+           embed.add_field(name="2.121 - trigger updates thanks to upside down fuck and grzegorz brzęczyszczykiewicz and everyone else", value="CANT I JUST LEAVE THIS EMPTY", inline=False)
            embed.add_field(name="2.120 - internal token upd", value="CANT I JUST LEAVE THIS EMPTY", inline=False)
            embed.add_field(name="2.119 - no more cat", value="CANT I JUST LEAVE THIS EMPTY", inline=False)
            embed.add_field(name="2.118 - jojo and pimps at sea update", value="CANT I JUST LEAVE THIS EMPTY", inline=False)
@@ -75,19 +76,19 @@ class MyClient(discord.Client):
            embed.add_field(name="2.81 - updated //help textbox", value="CANT I JUST LEAVE THIS EMPTY", inline=False)
            embed.set_footer(text="fuck discord fr")
            await message.reply(embed=embed, mention_author=True)
-        if message.content.lower().find('sus') != -1 and message.channel.id !=660314906972651530:
+        if message.content.lower() == ('sus') != -1 and message.channel.id !=660314906972651530:
             randomlist = (['sus1.jpg', 'sus2.png', 'sus3.mp4', 'sus4.png', 'sus5.jpg', 'sus6.png', 'sus7.png', 'sus8.jpg', 'sus9.png', 'sus10.jpg','sus11.mp4', 'sus12.png', 'sus13.mp4', 'sus14.mp4', 'sus15.mp4', 'sus16.png', 'sus17.jpg',])
             response = random.choice(randomlist)
             await message.channel.send(file=discord.File(response))
-        if message.content.lower().find('amogus') != -1 and message.channel.id !=660314906972651530:
+        if message.content.lower() == ('amogus') != -1 and message.channel.id !=660314906972651530:
             randomlist = (['sus1.jpg', 'sus2.png', 'sus3.mp4', 'sus4.png', 'sus5.jpg', 'sus6.png', 'sus7.png', 'sus8.jpg', 'sus9.png', 'sus10.jpg','sus11.mp4', 'sus12.png', 'sus13.mp4', 'sus14.mp4', 'sus15.mp4', 'sus16.png', 'sus17.jpg', 'sus18.mov',])
             response = random.choice(randomlist)
             await message.channel.send(file=discord.File(response))
-        if message.content.lower().find('amongus') != -1 and message.channel.id !=660314906972651530:
+        if message.content.lower() == ('amongus') != -1 and message.channel.id !=660314906972651530:
             randomlist = (['sus1.jpg', 'sus2.png', 'sus3.mp4', 'sus4.png', 'sus5.jpg', 'sus6.png', 'sus7.png', 'sus8.jpg', 'sus9.png', 'sus10.jpg','sus11.mp4', 'sus12.png', 'sus13.mp4', 'sus14.mp4', 'sus15.mp4', 'sus16.png', 'sus17.jpg', 'sus18.mov',])
             response = random.choice(randomlist)
             await message.channel.send(file=discord.File(response))
-        if message.content.lower().find('among us') != -1 and message.channel.id !=660314906972651530:
+        if message.content.lower() == ('among us') != -1 and message.channel.id !=660314906972651530:
             randomlist = (['sus1.jpg', 'sus2.png', 'sus3.mp4', 'sus4.png', 'sus5.jpg', 'sus6.png', 'sus7.png', 'sus8.jpg', 'sus9.png', 'sus10.jpg','sus11.mp4', 'sus12.png', 'sus13.mp4', 'sus14.mp4', 'sus15.mp4', 'sus16.png', 'sus17.jpg', 'sus18.mov',])
             response = random.choice(randomlist)
             await message.channel.send(file=discord.File(response))
@@ -115,13 +116,13 @@ class MyClient(discord.Client):
             randomlist = (['jojo.mp4', 'jojo2.mp4',])
             response = random.choice(randomlist)
             await message.channel.send(file=discord.File(response))
-        if message.content.lower().find('switch') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+        if message.content.lower().find('switchuwu') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
             await message.channel.send(file=discord.File('switch.png'))
         if message.content.lower().find('catgirl') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
-            await message.channel.send(file=discord.File('cat.png'))
+            await message.channel.send(file=discord.File('cat2.png'))
         if message.content.startswith('funny') and message.channel.id !=660314906972651530:
             await message.channel.send('https://cdn.discordapp.com/attachments/702620924783886336/773354751370067968/video0.mp4')
-        if message.content.lower().find('vtuber') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+        if message.content.lower() == ('vtuber') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
             await message.channel.send('https://cdn.discordapp.com/attachments/644226511381069824/817003185955668038/Vtubers.mp4')
         if message.content.lower().find('wonder') != -1 and message.author.id == 351773647871934466 and message.channel.id !=660314906972651530:
             await message.channel.send('no you cant')
@@ -151,5 +152,5 @@ class MyClient(discord.Client):
 
 
  
-client = MyClient(status = discord.Status.idle, activity = discord.Game('v2.120; //dzhelp'))
+client = MyClient(status = discord.Status.idle, activity = discord.Game('v2.121; //dzhelp'))
 client.run(TOKEN)
