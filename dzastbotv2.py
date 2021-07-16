@@ -1,5 +1,6 @@
 import discord
 import os
+#import praw
 from discord.ext import commands
 import random
 from dotenv import load_dotenv
@@ -8,6 +9,20 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
+#bot = commands.Bot(description="test", command_prefix="!")
+
+#reddit = praw.Reddit(client_id='4AI7G9lF3koPcQ',
+                    # client_secret='Gbdk2cB2srbJm6a6CpIaW7NpQ3d3RQ',
+                    # user_agent='post mirroring 0.1 by /u/JustAnyoneYT')
+
+#@bot.command()
+#async def meme():
+ #   memes_submissions = reddit.subreddit('memes').hot()
+ #   post_to_pick = random.randint(1, 10)
+ #   for i in range(0, post_to_pick):
+   #     submission = next(x for x in memes_submissions if not x.stickied)
+
+ #   await bot.say(submission.url)
 
 
 class MyClient(discord.Client):
@@ -33,7 +48,7 @@ class MyClient(discord.Client):
             return
         if message.author.bot: return
         if message.content.startswith('//dzhelp') and message.channel.id !=660314906972651530:
-           embedhelp=discord.Embed(title="Džastbot v2.128 help menu", description="Welcome to džastbot help menu, here is a small command/feature list:")
+           embedhelp=discord.Embed(title="Džastbot v2.131 help menu", description="Welcome to džastbot help menu, here is a small command/feature list:")
            embedhelp.set_author(name="Džastbot", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png")
            embedhelp.add_field(name="//megadrop", value="//megadrop - posts link with every nfs build i (JA) could find up to 2020 xmas ", inline=False)
            embedhelp.add_field(name="//irr", value="//irr - Your post/This discussion meme", inline=False)
@@ -44,14 +59,14 @@ class MyClient(discord.Client):
            embedhelp.add_field(name="//dzhelp", value="//dzhelp - Shows this message", inline=False)
            embedhelp.add_field(name="//changelog", value="//changelog - changelog", inline=False)
            embedhelp.add_field(name="//funny", value="funny - yes", inline=False)
-           embedhelp.add_field(name="Other features:", value="Responds with a picture/video to words `Ancar` `Creedoo` `Phantom` `Switchuwu` `Jojo` `Vtuber` `Sus` `Among us` `Amogus` `Amongus` `Pimps at sea` `Catgirl` `Toast` and `Depressing`", inline=False)
+           embedhelp.add_field(name="Other features:", value="Responds with a picture/video to words `Ancar` `Creedoo` `Phantom` `Switchuwu` `Jojo` `Vtuber` `Sus` `Among us` `Amogus` `Amongus` `Pimps at sea` `Catgirl` `Toast` `A1ra/Aira/Sadra` `Tanner` and `Depressing`", inline=False)
            embedhelp.add_field(name="Misc:", value="//update and //loopback - things exclusive for JA", inline=False)
            embedhelp.set_footer(text="fuck discord fr")
            await message.reply(embed=embedhelp, mention_author=True)
         if message.content.startswith('//changelog') and message.channel.id !=660314906972651530:
            embed=discord.Embed(title="Džastbot changelog")
            embed.set_author(name="Džastbot", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png")
-           embed.add_field(name="reserved for future update", value="2.128 - embed rework, zoomer repellent upd and no more crayon chewing", inline=False)
+           embed.add_field(name="2.131 - sadra and tanner update", value="2.128 - embed rework, zoomer repellent upd and no more crayon chewing", inline=False)
            embed.add_field(name="2.125-2.127 - zoomer repellent", value="2.124 - sus", inline=False)
            embed.add_field(name="2.123 - toast", value="2.122 - //funny upd", inline=False)
            embed.add_field(name="2.121 - trigger updates thanks to upside down fuck and grzegorz brzęczyszczykiewicz and everyone else", value="2.120 - internal token upd", inline=False)
@@ -110,10 +125,20 @@ class MyClient(discord.Client):
             await message.channel.send(file=discord.File(response))
         if message.content.lower().find('switchuwu') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
             await message.channel.send(file=discord.File('switch.png'))
+        if message.content.lower().find('sadra') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+            await message.channel.send(file=discord.File('sadra.jpg'))
+        if message.content.lower().find('aira') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+            await message.channel.send(file=discord.File('sadra.jpg'))
+        if message.content.lower().find('a1ra') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+            await message.channel.send(file=discord.File('sadra.jpg'))
         if message.content.lower().find('catgirl') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
             await message.channel.send(file=discord.File('cat2.png'))
         if message.content.lower().find('toast') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
             await message.channel.send(file=discord.File('toast.png'))
+        if message.content.lower().find('tanner') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+            await message.channel.send(file=discord.File('tanner.mov'))
+        if message.content.lower().find('apple') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
+            await message.channel.send(file=discord.File('tanner.mov'))
         if message.content.lower() == ('//funny') and message.channel.id !=660314906972651530:
             await message.channel.send('https://cdn.discordapp.com/attachments/702620924783886336/773354751370067968/video0.mp4')
         if message.content.lower() == ('vtuber') != -1 and message.author.id !=695337101876789309 and message.channel.id !=660314906972651530:
@@ -147,5 +172,5 @@ class MyClient(discord.Client):
 
 
  
-client = MyClient(status = discord.Status.idle, activity = discord.Game('v2.128; //dzhelp'))
+client = MyClient(status = discord.Status.idle, activity = discord.Game('v2.131; //dzhelp'))
 client.run(TOKEN)
