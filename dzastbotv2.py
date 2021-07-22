@@ -53,6 +53,7 @@ class MyClient(discord.Client):
         if message.content.startswith('~changelog'):
            embed=discord.Embed(title="My changelog")
            embed.set_author(name="Asuka")
+           embed.add_field(name="1.0.5", value="Updated example_bot.py", inline=False)
            embed.add_field(name="1.0.4", value="Changed Codename from 'Luna' to 'Baka Shinji'.", inline=False)
            embed.add_field(name="1.0.3", value="Fixed random startup code", inline=False)
            embed.add_field(name="1.0.2", value="Changed prefix from '//' to '~'.", inline=False)
