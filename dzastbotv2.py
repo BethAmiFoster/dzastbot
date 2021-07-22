@@ -36,7 +36,7 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         channel = client.get_channel(695014904381440092)
-        randomlist = (['Codename Baka Shinji , Indev 1.0.4 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
+        randomlist = (['Codename Baka Shinji , Indev 1.0.5 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
         response = random.choice(randomlist)
         await channel.send(response)
     
@@ -44,15 +44,16 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
         if message.author.bot: return
-        if message.content.startswith('~asukahelp'):
+        if message.content.startswith('~help'):
            embedhelp=discord.Embed(title="Asuka's help menu", description="Welcome to my help menu!")
            embedhelp.set_author(name="Asuka")
-           embedhelp.add_field(name="~asukahelp", value="Shows this help menu.", inline=False)
+           embedhelp.add_field(name="~help", value="Shows this help menu.", inline=False)
            embedhelp.add_field(name="~changelog", value="Shows my changelog.", inline=False)
            await message.reply(embed=embedhelp, mention_author=True)
         if message.content.startswith('~changelog'):
            embed=discord.Embed(title="My changelog")
            embed.set_author(name="Asuka")
+           embed.add_field(name="1.0.6", value="Changed '~asukahelp' to '~help', fixed example_bot.py.", inline=False)
            embed.add_field(name="1.0.5", value="Updated example_bot.py", inline=False)
            embed.add_field(name="1.0.4", value="Changed Codename from 'Luna' to 'Baka Shinji'.", inline=False)
            embed.add_field(name="1.0.3", value="Fixed random startup code", inline=False)
@@ -62,5 +63,5 @@ class MyClient(discord.Client):
            await message.reply(embed=embed, mention_author=True)
         if message.content.startswith('england') and message.channel.id !=660314906972651530:
             await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
-client = MyClient(status = discord.Status.idle, activity = discord.Game('~asukahelp'))
+client = MyClient(status = discord.Status.idle, activity = discord.Game('~help'))
 client.run(TOKEN)
