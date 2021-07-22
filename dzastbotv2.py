@@ -1,3 +1,4 @@
+  
 import discord
 import os
 #import praw
@@ -35,54 +36,30 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         channel = client.get_channel(695014904381440092)
-        randomlist = (['Codename Luna, Indev 1.1 Startup Complete, Online!'])
+        randomlist = (['Codename Baka Shinji , Indev 1.0.4 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
         response = random.choice(randomlist)
         await channel.send(response)
-        channel = client.get_channel(695014904381440092)
-        randomlist = (['JustAnyone can suck on my hairy fucking balls'])
-        response = random.choice(randomlist)
-        await channel.send(response)
-      
-            
     
     async def on_message(self, message):
         if message.author.id == self.user.id:
             return
         if message.author.bot: return
-        if message.content.startswith('//lunahelp') and message.channel.id !=660314906972651530:
-           embedhelp=discord.Embed(title="Codename: Luna", description="Codename Luna, A bot by Wildcat and Tex")
-           embedhelp.set_author(name="Codename: Luna", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon_url="https://cdn.discordapp.com/attachments/635144592534011958/867438178021539840/20210722_020846.jpg")
-           embedhelp.add_field(name="//cuntsfucked", value="//most shit is missing, functions added later:tm:", inline=False)
-           
-           embedhelp.set_footer(text="v1.1 Indev Alpha, if you see this i fucked your mother")
+        if message.content.startswith('~asukahelp'):
+           embedhelp=discord.Embed(title="Asuka's help menu", description="Welcome to my help menu!")
+           embedhelp.set_author(name="Asuka")
+           embedhelp.add_field(name="~asukahelp", value="Shows this help menu.", inline=False)
+           embedhelp.add_field(name="~changelog", value="Shows my changelog.", inline=False)
            await message.reply(embed=embedhelp, mention_author=True)
-        if message.content.startswith('//changelog') and message.channel.id !=660314906972651530:
-           embed=discord.Embed(title="Codename: Luna changelog")
-           embed.set_author(name="Codename: Luna", icon_url="https://cdn.discordapp.com/attachments/635144592534011958/867438178021539840/20210722_020846.jpg", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-           embed.add_field(name="1.1 Indev - Branding Change", inline=False)
-           embed.add_field(name="1.0 Indev - Codename Luna Fork", inline=False)
-           embed.add_field(name="2.131 - sadra and tanner update", value="2.128 - embed rework, zoomer repellent upd and no more crayon chewing", inline=False)
-           embed.add_field(name="2.125-2.127 - zoomer repellent", value="2.124 - sus", inline=False)
-           embed.add_field(name="2.123 - toast", value="2.122 - //funny upd", inline=False)
-           embed.add_field(name="2.121 - trigger updates thanks to upside down fuck and grzegorz brzęczyszczykiewicz and everyone else", value="2.120 - internal token upd", inline=False)
-           embed.add_field(name="2.119 - no more cat", value="2.118 - jojo and pimps at sea update", inline=False)
-           embed.add_field(name="2.116 - im back baby", value="2.115 - smiley channel edits update", inline=False)
-           embed.add_field(name="2.114 - moar sus pic", value="2.113 - pimp at sea update", inline=False)
-           embed.add_field(name="2.111 - embeds update and bots blacklisted", value="2.109 - smiley channel", inline=False)
-           embed.add_field(name="2.102 - added //megadrop", value="2.99-2.100 - more sus pics", inline=False)
-           embed.add_field(name="2.98 - more triggers for sus pics", value="2.97 - pimps at sea update", inline=False)
-           embed.add_field(name="2.96 - more sus pics", value="2.94 - added //beytah", inline=False)
-           embed.add_field(name="2.92 - enabled smiley channel code", value="2.85 - 2.91 - working on smiley channel revival, although disabled (code works though) plus one bugfix for sus response",inline=False)
-           embed.add_field(name="2.85 - changed //help to //dzhelp", value="2.84 - updated //help and //changelog textbox", inline=False)
-           embed.add_field(name="2.83 - added //changelog command", value="2.82 - added more sus pics", inline=False)
-           embed.add_field(name="2.81 - updated //help textbox", value="CANT I JUST LEAVE THIS EMPTY", inline=False)
-           embed.set_footer(text="fuck discord fr")
+        if message.content.startswith('~changelog'):
+           embed=discord.Embed(title="My changelog")
+           embed.set_author(name="Asuka")
+           embed.add_field(name="1.0.4", value="Changed Codename from 'Luna' to 'Baka Shinji'.", inline=False)
+           embed.add_field(name="1.0.3", value="Fixed random startup code", inline=False)
+           embed.add_field(name="1.0.2", value="Changed prefix from '//' to '~'.", inline=False)
+           embed.add_field(name="1.0.1", value="Added command 'england', dislays image.", inline=False)
+           embed.add_field(name="1.0.0", value="Asuka was born.", inline=False)
            await message.reply(embed=embed, mention_author=True)
-       
-        if message.content.lower().find('uwu') != -1 or message.content.lower().find('owo') != -1 or message.content.lower().find('x3') != -1:
-            await message.add_reaction('✔️')
-
-
- 
-client = MyClient(status = discord.Status.idle, activity = discord.Game('v1.1 Indev; //lunahelp'))
+        if message.content.startswith('england') and message.channel.id !=660314906972651530:
+            await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
+client = MyClient(status = discord.Status.idle, activity = discord.Game('~asukahelp'))
 client.run(TOKEN)
