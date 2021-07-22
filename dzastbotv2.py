@@ -1,10 +1,12 @@
 
 import discord
 import os
-#import praw
 from discord.ext import commands
 import random
 from dotenv import load_dotenv
+
+
+client = commands.Bot(command_prefix = '~')
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -54,7 +56,14 @@ class MyClient(discord.Client):
            embed.add_field(name="1.0.0", value="Asuka was born.", inline=False)
            await message.reply(embed=embed, mention_author=True)
 
-    #england image command
+    #hug command
+
+        @client.command()
+        async def hug (ctx, *, member):
+            author_name = ctx.message.author.name
+            await ctx,sebd (f' {author_name} has hugged {member}')
+
+    #image commands
 
         if message.content.startswith('england') and message.channel.id !=660314906972651530:
             await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
