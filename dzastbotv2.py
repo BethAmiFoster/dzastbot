@@ -47,9 +47,9 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
         if message.author.bot: return
-        if message.content.startswith('//dzhelp') and message.channel.id !=660314906972651530:
-           embedhelp=discord.Embed(title="Džastbot v2.131 help menu", description="Welcome to džastbot help menu, here is a small command/feature list:")
-           embedhelp.set_author(name="Džastbot", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png")
+        if message.content.startswith('//help') and message.channel.id !=660314906972651530:
+           embedhelp=discord.Embed(title="Yeah Nah cunts fucked", description="Go fuck yourself:")
+           embedhelp.set_author(name="Codename: Luna", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png")
            embedhelp.add_field(name="//megadrop", value="//megadrop - posts link with every nfs build i (JA) could find up to 2020 xmas ", inline=False)
            embedhelp.add_field(name="//irr", value="//irr - Your post/This discussion meme", inline=False)
            embedhelp.add_field(name="//beytah", value="//beytah - for annoying fucks who cant read pins", inline=False)
@@ -64,8 +64,8 @@ class MyClient(discord.Client):
            embedhelp.set_footer(text="fuck discord fr")
            await message.reply(embed=embedhelp, mention_author=True)
         if message.content.startswith('//changelog') and message.channel.id !=660314906972651530:
-           embed=discord.Embed(title="Džastbot changelog")
-           embed.set_author(name="Džastbot", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png")
+           embed=discord.Embed(title="Codename: Luna changelog")
+           embed.set_author(name="Codename: Luna", icon_url="https://cdn.discordapp.com/avatars/695337101876789309/199d18d7311452261f0e3dcfe49fad32.png", url="https://cdn.discordapp.com/attachments/695014904381440092/836329019292516392/sus16.png")
            embed.add_field(name="2.131 - sadra and tanner update", value="2.128 - embed rework, zoomer repellent upd and no more crayon chewing", inline=False)
            embed.add_field(name="2.125-2.127 - zoomer repellent", value="2.124 - sus", inline=False)
            embed.add_field(name="2.123 - toast", value="2.122 - //funny upd", inline=False)
