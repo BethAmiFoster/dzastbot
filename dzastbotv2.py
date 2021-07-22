@@ -34,13 +34,15 @@ class MyClient(discord.Client):
         print(self.user.name)
         print(self.user.id)
         print('------')
-        channel = client.get_channel(635144592534011958)
+        channel = client.get_channel(695014904381440092)
         randomlist = (['Codename Luna, Indev 1.1 Startup Complete, Online!'])
         response = random.choice(randomlist)
         await channel.send(response)
-    async def on_message_edit(message_before, message_after, message):
-        if message.channel.id == 635144592534011958 and not all(map(lambda x: x == '😃', ''.join(message.content.split()))):
-          await message.delete()
+        channel = client.get_channel(695014904381440092)
+        randomlist = (['JustAnyone can suck on my hairy fucking balls'])
+        response = random.choice(randomlist)
+        await channel.send(response)
+      
             
     
     async def on_message(self, message):
@@ -50,18 +52,9 @@ class MyClient(discord.Client):
         if message.content.startswith('//lunahelp') and message.channel.id !=660314906972651530:
            embedhelp=discord.Embed(title="Codename: Luna", description="Codename Luna, A bot by Wildcat and Tex")
            embedhelp.set_author(name="Codename: Luna", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ", icon_url="https://cdn.discordapp.com/attachments/635144592534011958/867438178021539840/20210722_020846.jpg")
-           embedhelp.add_field(name="//megadrop", value="//megadrop - posts link with every nfs build i (JA) could find up to 2020 xmas ", inline=False)
-           embedhelp.add_field(name="//irr", value="//irr - Your post/This discussion meme", inline=False)
-           embedhelp.add_field(name="//beytah", value="//beytah - for annoying fucks who cant read pins", inline=False)
-           embedhelp.add_field(name="//data", value="//data - dont ask to ask", inline=False)
-           embedhelp.add_field(name="//sanchez", value="//sanchez - inside joke only 10 people would get", inline=False)
-           embedhelp.add_field(name="//bs", value="//bs - Bullshit", inline=False)
-           embedhelp.add_field(name="//lunahelp", value="//lunahelp - Shows this message", inline=False)
-           embedhelp.add_field(name="//changelog", value="//changelog - changelog", inline=False)
-           embedhelp.add_field(name="//funny", value="funny - yes", inline=False)
-           embedhelp.add_field(name="Other features:", value="Responds with a picture/video to words `Ancar` `Creedoo` `Phantom` `Switchuwu` `Jojo` `Vtuber` `Sus` `Among us` `Amogus` `Amongus` `Pimps at sea` `Catgirl` `Toast` `A1ra/Aira/Sadra` `Tanner` and `Depressing`", inline=False)
-           embedhelp.add_field(name="Misc:", value="//update and //loopback - things exclusive for JA", inline=False)
-           embedhelp.set_footer(text="fuck discord fr")
+           embedhelp.add_field(name="//cuntsfucked", value="//most shit is missing, functions added later:tm:", inline=False)
+           
+           embedhelp.set_footer(text="v1.1 Indev Alpha, if you see this i fucked your mother")
            await message.reply(embed=embedhelp, mention_author=True)
         if message.content.startswith('//changelog') and message.channel.id !=660314906972651530:
            embed=discord.Embed(title="Codename: Luna changelog")
