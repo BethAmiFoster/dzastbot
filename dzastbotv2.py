@@ -1,4 +1,4 @@
-  
+
 import discord
 import os
 #import praw
@@ -6,29 +6,12 @@ from discord.ext import commands
 import random
 from dotenv import load_dotenv
 
-
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-#bot = commands.Bot(description="test", command_prefix="!")
-
-#reddit = praw.Reddit(client_id='4AI7G9lF3koPcQ',
-                    # client_secret='Gbdk2cB2srbJm6a6CpIaW7NpQ3d3RQ',
-                    # user_agent='post mirroring 0.1 by /u/JustAnyoneYT')
-
-#@bot.command()
-#async def meme():
- #   memes_submissions = reddit.subreddit('memes').hot()
- #   post_to_pick = random.randint(1, 10)
- #   for i in range(0, post_to_pick):
-   #     submission = next(x for x in memes_submissions if not x.stickied)
-
- #   await bot.say(submission.url)
-
-
 class MyClient(discord.Client):
 
-        #startup command
+    #startup command
 
     async def on_ready(self):
         print('Logged in as')
@@ -36,7 +19,7 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         channel = client.get_channel(695014904381440092)
-        randomlist = (['Codename Baka Shinji , Indev 1.1.0 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
+        randomlist = (['Codename Baka Shinji, Indev 1.1.0 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
         response = random.choice(randomlist)
         await channel.send(response)
     
@@ -45,7 +28,7 @@ class MyClient(discord.Client):
             return
         if message.author.bot: return
 
-        #help command
+    #help command
 
         if message.content.startswith('~help'):
            embedhelp=discord.Embed(title="Asuka's help menu", description="Welcome to my help menu!")
@@ -56,7 +39,7 @@ class MyClient(discord.Client):
            
            await message.reply(embed=embedhelp, mention_author=True)
 
-        #changelog command
+    #changelog command
 
         if message.content.startswith('~changelog'):
            embed=discord.Embed(title="My changelog")
@@ -71,20 +54,12 @@ class MyClient(discord.Client):
            embed.add_field(name="1.0.0", value="Asuka was born.", inline=False)
            await message.reply(embed=embed, mention_author=True)
 
-        #england image command
+    #england image command
 
         if message.content.startswith('england') and message.channel.id !=660314906972651530:
             await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
 
-        #hug command
-
-    async def hug(ctx, member: discord.Member):
-        ("Hug someone.")
-        embed = discord.Embed(title="Hug", description="**{1}** hugs **{0}**!".format(member.name, ctx.message.author.name), color=0x176cd5)
-        embed.set_thumbnail(url="https://cdn.weeb.sh/images/ryCG-OatM.gif")
-        await bot.say(embed=embed)
-
-        #bot online status and activity
+    #bot online status and activity
 
 client = MyClient(status = discord.Status.online, activity = discord.Game('Guten Morgen!'))
 client.run(TOKEN)
