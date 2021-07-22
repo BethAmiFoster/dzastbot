@@ -86,5 +86,5 @@ class MyClient(discord.Client):
 
         #bot online status and activity
 
-client = MyClient(status = discord.Status.idle, activity = discord.Game('Guten Morgen!'))
+client = MyClient(status = discord.Status.online, activity = discord.Game('Guten Morgen!'))
 client.run(TOKEN)
