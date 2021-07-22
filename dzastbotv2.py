@@ -36,7 +36,7 @@ class MyClient(discord.Client):
         print(self.user.id)
         print('------')
         channel = client.get_channel(695014904381440092)
-        randomlist = (['Codename Baka Shinji , Indev 1.0.5 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
+        randomlist = (['Codename Baka Shinji , Indev 1.1.0 Startup Complete. Online!', 'Guten Morgen!', 'https://cdn.discordapp.com/attachments/695014904381440092/867679459498262578/videoplayback.mp4', ])
         response = random.choice(randomlist)
         await channel.send(response)
     
@@ -52,6 +52,7 @@ class MyClient(discord.Client):
            embedhelp.set_author(name="Asuka")
            embedhelp.add_field(name="~help", value="Shows this help menu.", inline=False)
            embedhelp.add_field(name="~changelog", value="Shows my changelog.", inline=False)
+           embedhelp.add_field(name="~help", value="We gotta figure out how it works first.", inline=False)
            
            await message.reply(embed=embedhelp, mention_author=True)
 
@@ -85,5 +86,5 @@ class MyClient(discord.Client):
 
         #bot online status and activity
 
-client = MyClient(status = discord.Status.idle, activity = discord.Game('~help'))
+client = MyClient(status = discord.Status.idle, activity = discord.Game('Guten Morgen!'))
 client.run(TOKEN)
