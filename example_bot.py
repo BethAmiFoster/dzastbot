@@ -28,7 +28,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 class MyClient(discord.Client):
 
-
+        #startup command
 
     async def on_ready(self):
         print('Logged in as')
@@ -44,15 +44,23 @@ class MyClient(discord.Client):
         if message.author.id == self.user.id:
             return
         if message.author.bot: return
+
+        #help command
+
         if message.content.startswith('~help'):
            embedhelp=discord.Embed(title="Asuka's help menu", description="Welcome to my help menu!")
            embedhelp.set_author(name="Asuka")
            embedhelp.add_field(name="~help", value="Shows this help menu.", inline=False)
            embedhelp.add_field(name="~changelog", value="Shows my changelog.", inline=False)
+           embedhelp.add_field(name="~hug", value="Needs testing", inline=False)
            await message.reply(embed=embedhelp, mention_author=True)
+
+        #changelog command
+
         if message.content.startswith('~changelog'):
            embed=discord.Embed(title="My changelog")
            embed.set_author(name="Asuka")
+           embed.add_field(name="1.1.0", value="Added '~hug' command.", inline=False)
            embed.add_field(name="1.0.6", value="Changed '~asukahelp' to '~help', fixed example_bot.py.", inline=False)
            embed.add_field(name="1.0.5", value="Updated example_bot.py", inline=False)
            embed.add_field(name="1.0.4", value="Changed Codename from 'Luna' to 'Baka Shinji'.", inline=False)
@@ -61,7 +69,21 @@ class MyClient(discord.Client):
            embed.add_field(name="1.0.1", value="Added command 'england', dislays image.", inline=False)
            embed.add_field(name="1.0.0", value="Asuka was born.", inline=False)
            await message.reply(embed=embed, mention_author=True)
+
+        #england image command
+
         if message.content.startswith('england') and message.channel.id !=660314906972651530:
             await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
+
+        #hug command
+
+        async def hug(ctx, member: discord.Member):
+    """Hug someone."""
+    embed = discord.Embed(title="Hug", description="**{1}** hugs **{0}**!".format(member.name, ctx.message.author.name), color=0x176cd5)
+    embed.set_thumbnail(url="https://cdn.weeb.sh/images/ryCG-OatM.gif")
+    await bot.say(embed=embed)
+
+        #bot online status and activity
+
 client = MyClient(status = discord.Status.idle, activity = discord.Game('~help'))
 client.run(TOKEN)
