@@ -46,7 +46,8 @@ class MyClient(discord.Client):
         if message.content.startswith('~changelog'):
            embed=discord.Embed(title="My changelog")
            embed.set_author(name="Asuka")
-           embed.add_field(name="1.1.1", value="Added 'banana' and 'uwu, owo and x3 reactions'.", inline=False)
+           embed.add_field(name="1.1.2", value="Added 'banana' and 'uwu, owo and x3 reactions'.", inline=False)
+           embed.add_field(name="1.1.2", value="Added 'waifu' and 'jojo' commands, displays image.", inline=False)
            embed.add_field(name="1.1.0", value="Added '~hug' command.", inline=False)
            embed.add_field(name="1.0.6", value="Changed '~asukahelp' to '~help', fixed example_bot.py.", inline=False)
            embed.add_field(name="1.0.5", value="Updated example_bot.py", inline=False)
@@ -66,17 +67,11 @@ class MyClient(discord.Client):
         if message.content.startswith('england') and message.channel.id !=660314906972651530:
             await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
 
-        if message.content.startswith('uk') and message.channel.id !=660314906972651530:
-            await message.channel.send('https://media.discordapp.net/attachments/635144592534011958/867615725484244992/52a7r21gboc71.png')
-
         if message.content.startswith('waifu') and message.channel.id !=660314906972651530:
             await message.channel.send('https://cdn.discordapp.com/attachments/644226511381069824/867743649885454346/RDT_20210720_1018515839053802029751255.jpg')
 
         if message.content.startswith('jojo') and message.channel.id !=660314906972651530:
             await message.channel.send('https://cdn.discordapp.com/attachments/635144592534011958/867744369192599562/jojo.mp4')
-        
-        if message.content.startswith('tit') and message.channel.id !=660314906972651530:
-            await message.channel.send('https://cdn.discordapp.com/attachments/857380795395342387/867750612200587304/redditsave.com_russian_joker-nxau3bznhdc71.mp4')
 
     #reactions
 
