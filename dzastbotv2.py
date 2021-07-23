@@ -47,7 +47,7 @@ class MyClient(discord.Client):
            embed=discord.Embed(title="My changelog")
            embed.set_author(name="Asuka")
            embed.add_field(name="1.1.2", value="Added 'banana' and 'uwu, owo and x3 reactions'.", inline=False)
-           embed.add_field(name="1.1.2", value="Added 'waifu' and 'jojo' commands, displays image.", inline=False)
+           embed.add_field(name="1.1.1", value="Added 'waifu' and 'jojo' commands, displays image.", inline=False)
            embed.add_field(name="1.1.0", value="Added '~hug' command.", inline=False)
            embed.add_field(name="1.0.6", value="Changed '~asukahelp' to '~help', fixed example_bot.py.", inline=False)
            embed.add_field(name="1.0.5", value="Updated example_bot.py", inline=False)
